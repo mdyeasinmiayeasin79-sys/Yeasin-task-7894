@@ -1,1 +1,299 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Bangla Earn Hub</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f7ff;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0757c9, #1685ff);
+      color: white;
+      padding: 22px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 15px;
+    }
+
+    nav {
+      background: white;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0757c9;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      background: #e8f1ff;
+    }
+
+    .container {
+      width: 94%;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+
+    .hero {
+      background: white;
+      border-radius: 15px;
+      padding: 25px 18px;
+      text-align: center;
+      box-shadow: 0 3px 15px rgba(0,0,0,.08);
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      color: #0757c9;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      line-height: 1.7;
+    }
+
+    .tasks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 18px;
+    }
+
+    .task {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    }
+
+    .task h3 {
+      color: #0757c9;
+      margin-bottom: 8px;
+    }
+
+    .task .amount {
+      color: #0a9b45;
+      font-size: 23px;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    button,
+    .btn {
+      border: none;
+      background: #0757c9;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    button:hover,
+    .btn:hover {
+      background: #06449d;
+    }
+
+    .section {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    }
+
+    .section h2 {
+      color: #0757c9;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin: 7px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #0757c9;
+    }
+
+    .captcha-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 0;
+    }
+
+    #captcha {
+      background: #e8f1ff;
+      border: 1px dashed #0757c9;
+      padding: 11px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      user-select: none;
+      flex: 1;
+      text-align: center;
+    }
+
+    .refresh {
+      padding: 10px 13px;
+      background: #333;
+    }
+
+    .balance {
+      text-align: center;
+      background: #eafff1;
+      border: 1px solid #9de6b8;
+      padding: 18px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .balance strong {
+      display: block;
+      font-size: 28px;
+      color: #07943f;
+      margin-top: 5px;
+    }
+
+    .social-buttons {
+      display: grid;
+      gap: 10px;
+    }
+
+    .telegram {
+      background: #1685ff;
+    }
+
+    .facebook {
+      background: #1877f2;
+    }
+
+    .youtube {
+      background: #ff0000;
+    }
+
+    footer {
+      background: #073b88;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+      line-height: 1.8;
+    }
+
+    .notice {
+      background: #fff8d9;
+      border-left: 5px solid #f1c40f;
+      padding: 13px;
+      margin: 15px 0;
+      border-radius: 7px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 24px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        font-size: 13px;
+        padding: 7px 9px;
+      }
+
+      .container {
+        width: 92%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>💰 Bangla Earn Hub</h1>
+  <p>অনলাইনে কাজ করুন • পয়েন্ট সংগ্রহ করুন • রিওয়ার্ড নিন</p>
+</header>
+
+<nav>
+  <a href="#home">হোম</a>
+  <a href="#tasks">কাজ</a>
+  <a href="#withdraw">উইথড্র</a>
+  <a href="#contact">যোগাযোগ</a>
+</nav>
+
+<div class="container">
+
+  <section class="hero" id="home">
+    <h2>Bangla Earn Hub-এ স্বাগতম</h2>
+    <p>
+      বিভিন্ন অনলাইন টাস্ক সম্পন্ন করে আপনার ব্যালেন্স তৈরি করুন।
+      কাজ করার আগে প্রতিটি টাস্কের নিয়ম ভালোভাবে পড়ুন।
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="balance">
+      আপনার বর্তমান ব্যালেন্স
+      <strong>৳ <span id="balance">0</span></strong>
+    </div>
+
+    <div class="notice">
+      ⚠️ গুরুত্বপূর্ণ: কোনো টাস্কে টাকা দেওয়ার প্রয়োজন হলে আগে যাচাই করুন।
+      সাইটের মালিকের অনুমতি ছাড়া কোনো পেমেন্ট দাবি করবেন না।
+    </div>
+  </section>
+
+  <section class="section" id="tasks">
+    <h2>🎯 কাজের তালিকা</h2>
+
+    <div class="tasks">
+
+      <div class="task">
+        <h3>📱 Telegram
